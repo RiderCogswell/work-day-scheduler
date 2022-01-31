@@ -24,7 +24,7 @@ var setTasks = function() {
 
 var pullTasks = function() {
     // load task from local storage 
-    var loadedTasks = JSON.parse(localStorage.getItem(tasks));
+    var loadedTasks = JSON.parse(localStorage.getItem("tasks"));
     if (loadedTasks) {
     
         tasks = loadedTasks;
@@ -35,12 +35,14 @@ var pullTasks = function() {
             createTask(task, hourDiv);
         })
     }
+
+    colorcodeHours();
 };
 
 // create task function
 var createTask = function(taskText, hourDiv) {
     var taskDiv = hourDiv.find(".task");
-    var taskP = $("p")
+    var taskP = $("<p>")
     .addClass("description")
     .text(taskText)
     taskDiv.html(taskP);
@@ -53,9 +55,11 @@ var colorcodeHours = function() {
         var rowHour = parseInt($(this).attr("id"));
         if (rowHour < currentHour) {
             $(this).removeClass(["present", "future"]).addClass("past");
-        } else if (rowHour === currentHour) {
+        } 
+        else if (rowHour === currentHour) {
             $(this).removeClass(["past", "future"]).addClass("present");
-        } else {
+        } 
+        else {
             $(this).removeClass(["past", "present"]).addClass("future");
         }
     })
@@ -68,7 +72,7 @@ var replaceText = function(textAreaEl) {
 
     // set variables 
     var time = taskInfo.attr("id");
-    var text = textArea.val();
+    var text = textArea.val().trim();
 
     // persist data through local storage
     tasks[time] = [text];
@@ -99,8 +103,13 @@ $(".task").click(function() {
     }
 })
 
+// save btn handler
+$(".saveBtn").click(function() {
+    replaceText($(this));
+})
+
 // update task background every hour
-var timeToHour = 3600000 - today.milliseconds();
+timeToHour = 3600000 - today.milliseconds();
 setTimeout(function() {
     setInterval(colorcodeHours, 3600000);
 }, timeToHour)

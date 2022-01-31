@@ -31,15 +31,20 @@ body {
   }
   
   .row {
+    display: flex;
     white-space: pre-wrap;
     height: 80px;
     border-top: 1px solid white;;
+    text-align: center;
   }
   
   .hour {
     background-color: #ffffff;
     color: #000000;
     border-right: 1px solid #000000;
+    border-top: 1px solid #000;
+    text-align: left;
+    padding: 35px;
   }
   
   .past {
@@ -68,4 +73,8 @@ body {
   .saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
+  }
+
+  .saveBtn:hover {
+      background-color: #07cdf9;
   }

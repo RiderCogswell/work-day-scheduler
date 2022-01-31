@@ -8,6 +8,6 @@ I'm stressed with work and need something to help me organize my life, so I made
 ## Link: https://ridercogswell.github.io/work-day-scheduler/ 
 
 ## Contact: 
-*Rider Cogswell
-*(916) 743-0563
-*ridercogswell@gmail.com 
+* Rider Cogswell
+* (916) 743-0563
+* ridercogswell@gmail.com 

@@ -19,7 +19,7 @@ var tasks = {
 
 // add task to local storage
 var setTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
 var pullTasks = function() {
@@ -76,7 +76,7 @@ var replaceText = function(textAreaEl) {
 
     // persist data through local storage
     tasks[time] = [text];
-
+    setTasks();
     // call createTask to replace textarea 
     createTask(text, taskInfo);
 };

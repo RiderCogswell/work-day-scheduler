@@ -9,5 +9,4 @@ I'm stressed with work and need something to help me organize my life, so I made
 
 ## Contact: 
 * Rider Cogswell
-* (916) 743-0563
 * ridercogswell@gmail.com 
